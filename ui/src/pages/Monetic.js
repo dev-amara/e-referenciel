@@ -13,19 +13,19 @@ import { SkeletonResolveItem } from '../components/skeleton';
 
 // ----------------------------------------------------------------------
 
-export default function Referential() {
+export default function Monetic() {
   const { themeStretch } = useSettings();
 
   const { title } = useParams();
 
   return (
-    <Page title="Referential: Details">
+    <Page title="Monétique: Details">
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
-          heading="Référentiel Details"
+          heading="Monétique Details"
           links={[
             { name: 'Dashboard', href: PATH_DASHBOARD.root },
-            { name: 'Référentiel', href: PATH_DASHBOARD.referential.root },
+            { name: 'Monétique', href: PATH_DASHBOARD.monetics.root },
             { name: sentenceCase(title) },
           ]}
         />

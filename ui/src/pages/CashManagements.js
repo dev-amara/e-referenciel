@@ -4,14 +4,14 @@ import { Box, Container, Grid } from '@mui/material';
 import useSettings from '../hooks/useSettings';
 // components
 import Page from '../components/Page';
-import HeaderBreadcrumbs from '../components/HeaderBreadcrumbs';
 import { PATH_DASHBOARD } from '../routes/paths';
-import { ResolveMoneticCard } from '../sections/@dashboard/resolve';
+import HeaderBreadcrumbs from '../components/HeaderBreadcrumbs';
+import { ResolveCashManagementCard } from '../sections/@dashboard/resolve';
 import { SkeletonResolveItem } from '../components/skeleton';
 
 // ----------------------------------------------------------------------
 
-const MONETICS = [
+const CASH_MANAGEMENTS = [
   {
     id: 1,
     title: 'Creation de fiche banque',
@@ -28,29 +28,29 @@ const MONETICS = [
 
 // ----------------------------------------------------------------------
 
-export default function Monetics() {
+export default function CashManagements() {
   const { themeStretch } = useSettings();
 
   return (
-    <Page title="Monétique">
+    <Page title="Cash Management">
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <HeaderBreadcrumbs
-          heading="Liste des demandes Monetique"
+          heading="Liste des demandes Cash Management"
           links={[
             { name: 'App', href: PATH_DASHBOARD.root },
             {
-              name: 'Monétique',
-              href: PATH_DASHBOARD.monetics.root,
+              name: 'Cash Management',
+              href: PATH_DASHBOARD.cashManagement.root,
             },
             { name: 'Liste' },
           ]}
         />
 
         <Box container spacing={3}>
-          {MONETICS.map((referential) =>
+          {CASH_MANAGEMENTS.map((referential) =>
             referential ? (
               <Grid key={referential.id} item xs={12} sm={12}>
-                <ResolveMoneticCard referential={referential} />
+                <ResolveCashManagementCard referential={referential} />
               </Grid>
             ) : (
               <SkeletonResolveItem />

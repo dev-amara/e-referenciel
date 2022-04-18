@@ -4,15 +4,9 @@ function path(root, sublink) {
   return `${root}${sublink}`;
 }
 
-const ROOTS_AUTH = '/auth';
 const ROOTS_DASHBOARD = '/dashboard';
 
 // ----------------------------------------------------------------------
-
-export const PATH_AUTH = {
-  root: ROOTS_AUTH,
-  login: path(ROOTS_AUTH, '/login'),
-};
 
 export const PATH_DASHBOARD = {
   root: ROOTS_DASHBOARD,
@@ -26,18 +20,23 @@ export const PATH_DASHBOARD = {
   },
   referential: {
     root: path(ROOTS_DASHBOARD, '/referential'),
+    view: (title) => path(ROOTS_DASHBOARD, `/referential/${title}`),
   },
   engagement: {
     root: path(ROOTS_DASHBOARD, '/engagement'),
+    view: (title) => path(ROOTS_DASHBOARD, `/engagement/${title}`),
   },
   monetics: {
     root: path(ROOTS_DASHBOARD, '/monetics'),
+    view: (title) => path(ROOTS_DASHBOARD, `/monetics/${title}`),
   },
   cashManagement: {
     root: path(ROOTS_DASHBOARD, '/cash_management'),
+    view: (title) => path(ROOTS_DASHBOARD, `/cash_management/${title}`),
   },
   canalsConformity: {
     root: path(ROOTS_DASHBOARD, '/canals_conformity'),
+    view: (title) => path(ROOTS_DASHBOARD, `/canals_conformity/${title}`),
   },
 };
 
