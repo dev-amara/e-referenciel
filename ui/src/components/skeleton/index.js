@@ -1,1 +1,1 @@
-export { default as SkeletonResolveItem } from './SkeletonResolveItem';
+export { default as SkeletonProcedureItem } from './SkeletonProcedureItem';

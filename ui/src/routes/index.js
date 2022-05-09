@@ -24,7 +24,7 @@ export default function Router() {
   return useRoutes([
     {
       path: '/',
-      element: <Navigate to="/auth/login" replace />,
+      element: <Navigate to="/dashboard/app" replace />,
       index: true,
     },
     {
@@ -47,7 +47,7 @@ export default function Router() {
         {
           path: 'referential',
           children: [
-            { element: <Referentials />, index: true },
+            { element: <ReferentialList />, index: true },
             { path: ':title', element: <Referential /> },
           ],
         },
@@ -55,7 +55,7 @@ export default function Router() {
         {
           path: 'engagement',
           children: [
-            { element: <Engagements />, index: true },
+            { element: <EngagementList />, index: true },
             { path: ':title', element: <Engagement /> },
           ],
         },
@@ -63,7 +63,7 @@ export default function Router() {
         {
           path: 'monetics',
           children: [
-            { element: <Monetics />, index: true },
+            { element: <MoneticList />, index: true },
             { path: ':title', element: <Monetic /> },
           ],
         },
@@ -71,7 +71,7 @@ export default function Router() {
         {
           path: 'cash_management',
           children: [
-            { element: <CashManagements />, index: true },
+            { element: <CashManagementList />, index: true },
             { path: ':title', element: <CashManagement /> },
           ],
         },
@@ -79,41 +79,32 @@ export default function Router() {
         {
           path: 'canals_conformity',
           children: [
-            { element: <CanalsConformitys />, index: true },
+            { element: <CanalsConformityList />, index: true },
             { path: ':title', element: <CanalsConformity /> },
           ],
         },
       ],
     },
-    {
-      path: '*',
-      element: <LogoOnlyLayout />,
-      children: [
-        { path: '404', element: <NotFound /> },
-        { path: '*', element: <Navigate to="/404" replace /> },
-      ],
-    },
-    { path: '*', element: <Navigate to="/404" replace /> },
   ]);
 }
 
 // Dashboard
 const Home = Loadable(lazy(() => import('../pages/Home')));
 
-const Referentials = Loadable(lazy(() => import('../pages/Referentials')));
-const Referential = Loadable(lazy(() => import('../pages/Referential')));
+const ReferentialList = Loadable(lazy(() => import('../pages/referential/ReferentialList')));
+const Referential = Loadable(lazy(() => import('../pages/referential/Referential')));
 
-const Engagements = Loadable(lazy(() => import('../pages/Engagements')));
-const Engagement = Loadable(lazy(() => import('../pages/Engagement')));
+const EngagementList = Loadable(lazy(() => import('../pages/engagement/EngagementList')));
+const Engagement = Loadable(lazy(() => import('../pages/engagement/Engagement')));
 
-const Monetics = Loadable(lazy(() => import('../pages/Monetics')));
-const Monetic = Loadable(lazy(() => import('../pages/Monetic')));
+const MoneticList = Loadable(lazy(() => import('../pages/monetics/MoneticList')));
+const Monetic = Loadable(lazy(() => import('../pages/monetics/Monetic')));
 
-const CashManagements = Loadable(lazy(() => import('../pages/CashManagements')));
-const CashManagement = Loadable(lazy(() => import('../pages/CashManagement')));
+const CashManagementList = Loadable(lazy(() => import('../pages/cash-management/CashManagementList')));
+const CashManagement = Loadable(lazy(() => import('../pages/cash-management/CashManagement')));
 
-const CanalsConformitys = Loadable(lazy(() => import('../pages/CanalsConformitys')));
-const CanalsConformity = Loadable(lazy(() => import('../pages/CanalsConformity')));
+const CanalsConformityList = Loadable(lazy(() => import('../pages/canals-conformity/CanalsConformityList')));
+const CanalsConformity = Loadable(lazy(() => import('../pages/canals-conformity/CanalsConformity')));
 
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 

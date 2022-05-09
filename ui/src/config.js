@@ -1,6 +1,8 @@
 // LAYOUT
 // ----------------------------------------------------------------------
 
+export const HOST_API = `http://localhost:3002`;
+
 export const HEADER = {
   MOBILE_HEIGHT: 64,
   MAIN_DESKTOP_HEIGHT: 88,
